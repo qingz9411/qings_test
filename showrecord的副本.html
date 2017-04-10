@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<head>
+<title>welcome to your house</title>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="js/bootstrap.min.js"></script>
+<!--datatables表格控件的css-->
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+<!--datatables表格控件的js-->
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+
+<style type="text/css">
+            table{text-align:center; font-size:24px; border:1px #CCC solid; }
+            table th{width:150px; border:1px #CCC solid;}
+            table td{width:150px; border:1px #CCC solid;}
+        </style>
+
+</head>
+
+<body>
+<!--bootstrap导航栏 可根据自己的需求改-->
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<h2>your lock open records </h2>
+
+<div id="content">
+
+</div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+    var s=3;
+    var ts =["1119", "1229", "131"];
+    var vs=["zoey", "zw", "junbo"];
+    var cs=["friend", "stranger", "hahaha"];
+    var ws=["pw", "permission", "pw"];
+
+
+    var html = "";
+    html += "<table cellspacing=0 id='example'><thead><tr>";
+    html += "<th>"+"connecttime"+"</th>";
+    html += "<th>"+"visitor"+"</th>";
+    html += "<th>"+"category"+"</th>";
+    html += "<th>"+"ay unlock"+"</th></tr></thead><tbody>";
+
+    for(var i = 0, length = 3; i < length; i++){
+        html += "<tr>" +
+                    "<td>" + ts[i] + "</td>"+
+                    "<td>"+ vs[i] +"</td>"+
+                    "<td>"+ cs[i] +"</td>"+
+                    "<td>"+ ws[i] +"</td>" ;
+                    
+                "</tr>";
+    }
+    html += "</table>";
+    document.getElementById("content").innerHTML = html;
+    $(document).ready(function() {//datatables表格初始化
+     $('#example').dataTable();
+});
+    /*var Date = ["2015-7-1", "2015-7-2", "2015-7-3"]; 
+    var Name = ["张三","李四","王五","赵六"];
+    var html = "";
+    html += "<table cellspacing=0>" + 
+                "<th></th>";
+    for(var i = 0, length = Date.length; i < length; i++){
+        html += "<th>" + Date[i] + "</th>";
+    }
+    for(var i = 0, length = Name.length; i < length; i++){
+        html += "<tr>" + 
+                    "<td>" + Name[i] + "</td>" + "<td>" + "你好" + "</td>";
+                    //在这里编写您的表格内容，如："<td>" + "你好" + "</td>";
+                "</tr>";
+    }
+    html += "</table>";
+    document.getElementById("content").innerHTML = html;*/
+</script>
